@@ -1,0 +1,59 @@
+# Python bytecode
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.so
+*.dylib
+
+# Virtual environments
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Distribution / packaging
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# pytest cache
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+
+# Emacs editor files
+*~
+.#*
+*.elc
+*.emacs.desktop
+*.emacs-*
+
+# macOS Finder directory settings
+.DS_Store
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+
+# Jupyter Notebook files
+.ipynb_checkpoints/
+
+# VSCode settings (if applicable)
+.vscode/
+
+# PyCharm settings (if applicable)
+.idea/
+
+# Other specific files or directories you may want to exclude
+*.log
+*.bak
