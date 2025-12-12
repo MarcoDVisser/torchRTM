@@ -7,14 +7,14 @@ Unit tests for atmospheric correction utilities and SMAC–PROSAIL linkage.
 
 import torch
 import pytest
-from torchrtm.atmosphere.smac import (
+from ..torchrtm.atmosphere.smac import (
     smac,
     calculate_pressure_from_altitude,
     canp_to_ban_5,
     toc_to_toa,
 )
-from torchrtm.models import prosail_shell_v2
-from torchrtm.data_loader import load_coefmat, load_prospectd_matrix, load_soil_spectra, load_smac_sensor
+from ..torchrtm.models import prosail_shell_v2
+from ..torchrtm.data_loader import load_coefmat, load_prospectd_matrix, load_soil_spectra, load_smac_sensor
 
 
 def test_pressure_from_altitude():
@@ -85,21 +85,20 @@ def test_toc_to_toa_with_prosail():
 
     # Load sensor information
     sensor_name = "Sentinel2A-MSI"
-    coefs = load_smac_sensor(sensor_name)
-
+    coefs,sm_wl = load_smac_sensor(sensor_name.split('.')[0])
+    bans_num =  len(sm_wl)
     # Run the SMAC function with the loaded coefficients
     outputs = smac(tts, tto, psi, coefs)
-
     # Add assertions to check that the outputs are as expected
-    assert outputs[0].shape == (B, WL), "ttetas has incorrect shape"
-    assert outputs[1].shape == (B, WL), "ttetav has incorrect shape"
-    assert outputs[2].shape == (B, WL), "tg has incorrect shape"
-    assert outputs[3].shape == (B, WL), "s has incorrect shape"
-    assert outputs[4].shape == (B, WL), "atm_ref has incorrect shape"
-    assert outputs[5].shape == (B, WL), "tdir_tts has incorrect shape"
-    assert outputs[6].shape == (B, WL), "tdif_tts has incorrect shape"
-    assert outputs[7].shape == (B, WL), "tdir_ttv has incorrect shape"
-    assert outputs[8].shape == (B, WL), "tdif_ttv has incorrect shape"
+    assert outputs[0].shape == (B, bans_num), "ttetas has incorrect shape"
+    assert outputs[1].shape == (B, bans_num), "ttetav has incorrect shape"
+    assert outputs[2].shape == (B, bans_num), "tg has incorrect shape"
+    assert outputs[3].shape == (B, bans_num), "s has incorrect shape"
+    assert outputs[4].shape == (B, bans_num), "atm_ref has incorrect shape"
+    assert outputs[5].shape == (B, bans_num), "tdir_tts has incorrect shape"
+    assert outputs[6].shape == (B, bans_num), "tdif_tts has incorrect shape"
+    assert outputs[7].shape == (B, bans_num), "tdir_ttv has incorrect shape"
+    assert outputs[8].shape == (B, bans_num), "tdif_ttv has incorrect shape"
 
     assert torch.all(outputs[5] >= 0), "All TOA reflectance values (tdir_tts) should be non-negative."
     assert torch.all(outputs[6] >= 0), "All TOA reflectance values (tdif_tts) should be non-negative."

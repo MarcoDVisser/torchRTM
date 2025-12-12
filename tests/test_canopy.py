@@ -1,7 +1,7 @@
 import torch
 import numpy as np
 import pytest
-from torchrtm.canopy.lidf import lidf_1, lidf_2, lidf_3, lidf_4
+from ..torchrtm.canopy.lidf import lidf_1, lidf_2, lidf_3, lidf_4
 
 @pytest.mark.parametrize("a, b", [(-0.3, -0.1)])
 def test_lidf_1_scalar_and_batch(a, b):

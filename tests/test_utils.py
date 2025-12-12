@@ -1,6 +1,6 @@
 import torch
 import numpy as np
-from torchrtm.utils import (
+from ..torchrtm.utils import (
     exp1,
     betainc
 )

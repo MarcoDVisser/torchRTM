@@ -1,6 +1,6 @@
 import torch
-from torchrtm.leaf.prospect import prospect5b, prospectd
-from torchrtm.data_loader import load_coefmat, load_prospectd_matrix, load_soil_spectra, load_smac_sensor
+from ..torchrtm.leaf.prospect import prospect5b, prospectd
+from ..torchrtm.data_loader import load_coefmat, load_prospectd_matrix, load_soil_spectra, load_smac_sensor
 
 def test_prospect5b_output_shape():
     # Create dummy inputs for a single sample.

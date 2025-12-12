@@ -1,3 +1,32 @@
+Metadata-Version: 2.1
+Name: torchrtm
+Version: 1.3.4
+Summary: Torch-based Vegetation Radiative Transfer Model library (PROSPECT, SAIL, SMAC)
+Home-page: https://github.com/Schimasuperbra/torchrtm
+Author: Peng Sun, Marco D. Visser
+Author-email: sunpeng18@mails.ucas.ac.cn
+License: MIT
+Project-URL: Source, https://github.com/Schimasuperbra/torchrtm
+Project-URL: Bug Tracker, https://github.com/Schimasuperbra/torchrtm/issues
+Keywords: radiative transfer,PROSAIL,SMAC,torch,remote sensing,inversion
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Atmospheric Science
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: torch>=2.0.0
+Requires-Dist: numpy>=1.18
+Requires-Dist: pandas>=1.1
+Requires-Dist: scipy>=1.5
+Requires-Dist: matplotlib
+Requires-Dist: tqdm
+
 # TorchRTM: A PyTorch-based Radiative Transfer Modeling Toolkit
 
 [![PyPI version](https://badge.fury.io/py/torchrtm.svg)](https://pypi.org/project/torchrtm/)

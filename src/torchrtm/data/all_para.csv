@@ -1,0 +1,21 @@
+para,min,max
+lai,1,15
+LIDFa,-1,1
+LIDFb,-1,1
+hspot (q also),1.00E-06,1
+tts,0,90
+tto,0,90
+psi,0,180
+psoil,0,1
+N,1,5
+Cab,10,200
+Car,1,80
+Cbrown,0,1
+Cw,5.00E-05,0.04
+Cm,5.00E-05,0.03
+Canth,0,50
+prot,0,0.003
+Cbc,0,0.035
+aot550,0.0001,1
+uo3,0.0001,1
+uh2o,0.5,10

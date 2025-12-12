@@ -1,7 +1,7 @@
 import numpy as np
 import torch
 import pandas as pd
-from torchrtm.models import prosail_shell_v2
+from ..torchrtm.models import prosail
 
 def test_prosail_shell_v2_runs():
     batch_size = 2
@@ -34,7 +34,7 @@ def test_prosail_shell_v2_runs():
     litab = torch.linspace(5, 89, 13)
     
     # Call the high-level PROSAIL shell function.
-    result = prosail_shell_v2(
+    result = prosail(
         traits, N, LIDFa, LIDFb, lai, q,
         tts, tto, psi, tran_alpha, psoil,
         batch_size=batch_size, use_prospectd=False, lidtype=1
