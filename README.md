@@ -15,7 +15,7 @@ It integrates:
 
 TorchRTM is ideal for remote sensing, vegetation trait retrieval, radiative transfer simulation, environmental monitoring, machine learning and RTM-based inversion workflows.
 
-## 🌟 Key Features
+## Key Features
 
 * Full PROSPECT + PROSAIL + SMAC integration
 * GPU-accelerated simulations for millions of samples
@@ -25,7 +25,7 @@ TorchRTM is ideal for remote sensing, vegetation trait retrieval, radiative tran
 * Supports TOC and TOA reflectance
 * Fully compatible with PyTorch pipelines and deep learning models
 
-## 📦 Installation
+## Installation
 ```bash
 pip install torchrtm
 ```
@@ -36,7 +36,7 @@ pip install torchrtm
 * PyTorch ≥ 1.12  
   (Install PyTorch based on your hardware: https://pytorch.org/get-started/locally/)
 
-## 📘 User Guide
+## User Guide
 
 This README includes complete usage documentation for:
 
@@ -356,15 +356,16 @@ pred = Torchlut_pred(
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 PRs and issues are welcome!  
 Please include tests and clear descriptions.
 
 ---
 
-## 📜 License
+## License
 
 MIT License.
+
 
 ---
